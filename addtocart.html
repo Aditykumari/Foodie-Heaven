@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <h1>Your Order Will Be Delivered Soon at Your Location:</h1>
+    <title>Google Map Location</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital@1&display=swap');
+        h1 {
+            font-size: 52px;
+            text-align: center;
+            justify-content: center;
+            color: white;
+            gap: 20px;
+        }
+        h3 {
+            color: white;
+        }
+        body {
+            background-color: rgb(58, 3, 3);
+            font-family: 'Barlow Condensed', sans-serif;
+        }
+        h3 {
+            font-size: 32px;
+        }
+        ul {
+            font-size: 29px;
+        }
+        #map {
+            width: 400px;
+            height: 300px;
+            margin: 0 auto;
+        }
+        #delivery-message {
+            color: rgb(6, 174, 6);
+            font-size: 52px;
+            text-align: center;
+            justify-content: center;
+        }
+        #delivery-button{
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Google Map Location</h1>
+   
+    <div id="map"></div>
+    
+    <p id="links"></p>
+    
+    <script>
+        // Function to initialize and display the Google Map
+        function initMap() {
+            var location = {lat: 23.7928, lng: 86.4258}; // Bit Sindri location
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: location,
+                zoom: 12
+            });
+        
+            var marker = new google.maps.Marker({
+                position: location,
+                map: map,
+                title: "Bit Sindri"
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIR0w4AbpL-dLfzZzK5emuH83xPovoO1k&callback=initMap" async defer></script>  
+    
+    <script>
+        // Function to show delivery message and button
+        function showDeliveryMessage() {
+            document.getElementById("map").style.display = "none";
+            document.getElementById("links").style.display = "none";
+            document.getElementById("delivery-message").style.display = "block";
+            document.getElementById("delivery-button").style.display = "block";
+        }
+    
+        // Set timeout to show delivery message after 20 seconds
+        setTimeout(showDeliveryMessage, 20000);
+
+        const buttton = document.getElementById('delivery-button');
+  
+ 
+  
+    </script>
+     <h1>wait for 20 sec only.....</h1>
+    <h3>While you are waiting for your order, you can play these games:</h3>
+    <ul style="list-style-type:disc;" id="links">
+        <li><a href="https://aditykumari.github.io/spotify-Clone/">Listen  songs on Spotify</a></li>
+        <li><a href="https://aditykumari.github.io/Snake-game/">Play Snake Game (only for desktop)</a></li> 
+        <li><a href="https://aditykumari.github.io/Quiz-APP/">Play Quiz Game</a></li>
+        <li><a href="https://aditykumari.github.io/Weather-app/">You can check the weather of your location</a></li>
+        <li><a href="https://aditykumari.github.io/Random-color/">Play Color Game</a></li>
+    </ul>
+
+    <p id="delivery-message" style="display: none;">🥳🥳Your order has been delivered. Thank you!</p>
+    
+</body>
+</html>
